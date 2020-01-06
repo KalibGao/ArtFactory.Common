@@ -15,12 +15,16 @@ jobs:
         dotnet-version: 3.1.100
     - name: Build
       run: dotnet build -c Release  
-    - name: Publish package
+    - name: Publish packages
       run: |
         version=`git describe --tags`
-        dotnet pack -c Release -p:PackageVersion=$version
-        dotnet nuget push ./src/ArtFactory.Common/bin/Release/ArtFactory.Common.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
+        
+        dotnet pack -c Release -p:PackageVersion=$version 
+
         dotnet nuget push ./src/ArtFactory.Common.DDD/bin/Release/ArtFactory.Common.DDD.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
+
+        dotnet nuget push ./src/ArtFactory.Common/bin/Release/ArtFactory.Common.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
+
       env:
         Nuget_API_KEY: ${{secrets.NUGET_API_KEY}}
         
