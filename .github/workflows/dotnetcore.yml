@@ -18,7 +18,7 @@ jobs:
     - name: Publish package
       run: |
         version=`git describe --tags`
-        dotnet pack ./src/ArtFactory.Common.DDD -c Release -p:PackageVersion=$version
+        dotnet pack -c Release -p:PackageVersion=$version
         dotnet nuget push ./src/ArtFactory.Common/bin/Release/ArtFactory.Common.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
         dotnet nuget push ./src/ArtFactory.Common.DDD/bin/Release/ArtFactory.Common.DDD.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
       env:
