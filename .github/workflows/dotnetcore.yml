@@ -1,36 +1,27 @@
-name: .NET Core
+name: Publish ArtFactory.Common.DDD to Nuget
 
 on: 
   push:
     tags: '*'
 jobs: 
-  build:
-
+  publish: 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Pull project git repository
+      uses: actions/checkout@v1
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.2.108
-    - name: Build with dotnet
-      run: dotnet build -c Release
-  
-  publish:
-    needs: [build]
-    name: Publish ArtFactory.Common.DDD to Nuget
-    runs-on: [ubuntu-latest]
-    steps:
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 2.2.108
-      - name: Publish
-        run: | 
-          version=`git describe --tags`
-          dotnet pack ./src/ArtFactory.Common.DDD -c Release -p:PackageVersion=$version
-          dotnet nuget push  src/ArtFactory.Common.DDD/bin/Release/ArtFactory.Common.DDD.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
-        env:
-          Nuget_API_KEY: ${{secrets.NUGET_API_KEY}}
+        dotnet-version: 3.1.100
+    - name: Build relase with dotnet
+      run: dotnet build -c Release  
+    - name: Publish package
+      run: | 
+        cd ./ArtFactory.Common
+        version=`git describe --tags`
+        dotnet pack ./src/ArtFactory.Common.DDD -c Release -p:PackageVersion=$version
+        dotnet nuget push  src/ArtFactory.Common.DDD/bin/Release/ArtFactory.Common.DDD.$version.nupkg -k ${Nuget_API_KEY} -s https://api.nuget.org/v3/index.json
+      env:
+        Nuget_API_KEY: ${{secrets.NUGET_API_KEY}}
         
