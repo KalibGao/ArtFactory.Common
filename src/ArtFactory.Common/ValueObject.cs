@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ArtFactory.Common.DDD
+namespace ArtFactory.Common
 {
     public abstract class ValueObject
     {
@@ -35,7 +35,7 @@ namespace ArtFactory.Common.DDD
                     return false;
             }
 
-            return !thisValues.MoveNext() && !otherValues.MoveNext(); 
+            return !thisValues.MoveNext() && !otherValues.MoveNext();
         }
 
         protected abstract IEnumerable<object> GetAtomicValues();

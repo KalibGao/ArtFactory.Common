@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtFactory.Common.DDD", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtFactory.Common.ValueObjects", "src\ArtFactory.Common.ValueObjects\ArtFactory.Common.ValueObjects.csproj", "{3A69662B-1377-4B36-870D-6AE8A03C46BC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtFactory.Common", "src\ArtFactory.Common\ArtFactory.Common.csproj", "{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,18 @@ Global
 		{3A69662B-1377-4B36-870D-6AE8A03C46BC}.Release|x64.Build.0 = Release|Any CPU
 		{3A69662B-1377-4B36-870D-6AE8A03C46BC}.Release|x86.ActiveCfg = Release|Any CPU
 		{3A69662B-1377-4B36-870D-6AE8A03C46BC}.Release|x86.Build.0 = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|x64.Build.0 = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Debug|x86.Build.0 = Debug|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|x64.ActiveCfg = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|x64.Build.0 = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|x86.ActiveCfg = Release|Any CPU
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +68,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1D9B71E2-CC1A-4C7C-B0C8-7A3DD24653DE} = {1169D550-21EF-4A13-89E4-FA7A65562318}
 		{3A69662B-1377-4B36-870D-6AE8A03C46BC} = {1169D550-21EF-4A13-89E4-FA7A65562318}
+		{120DEAA1-6D8F-4F93-A1D7-7DA573A03D24} = {1169D550-21EF-4A13-89E4-FA7A65562318}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90B69514-0EA8-4B1F-8270-68BCB05F66F9}
